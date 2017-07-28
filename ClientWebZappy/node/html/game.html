@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- All css inclusions -->
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+  <link href="lib/toastr-master/build/toastr.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="css/game.css">
+  <link rel="stylesheet" type="text/css" href="css/gui.css">
+  <!-- /All css inclusions -->
+  <title>Game</title>
+</head>
+<body>
+  <audio controls autoplay loop style="display: none;">
+    <source src="src/music/Minecraft_Calm_3.mp3" type="audio/mp3">
+    </audio>
+    <div id="" class="top">
+      <div class="col-md-4 col-md-offset-4 align-center" id="timer" style="background-color:transparent;">
+
+      </div>
+    </div>
+    <div id="" class="left">
+      <div class="row">
+        <div class="col-md-3 l-title titleLegend">
+          Teams
+        </div>
+        <div class="col-md-12 black">
+          <ul class="list-group full">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="infoCharacter" class="bottom">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-xs-12 align-center box bg-color">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="row">
+              <div class="col-md-12" id="nbPlayer">
+                <span class="pointeur" onclick="changeMinus()"><span class="glyphicon glyphicon-minus">&nbsp;&nbsp;</span></span>Player <span id="playernumber">none</span>&nbsp;&nbsp;<span class="pointeur"><span class="glyphicon glyphicon-plus" onclick="changePlus()"></span></span>
+              </div>
+              <div class="col-md-12" id="nameTeam">
+                Team <span id="teamName">none</span>
+              </div>
+              <div class="col-md-12" id="levelPlayer">
+                Level:<span id="playerLevel">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="col-md-12 align-center" id="numPlayer"> </div>
+            <div class="col-md-12">
+              <div class="row" style="padding-top:21px;">
+                <div class="col-md-2"><img src="src/ressources/normal/wood.png" alt="" width=50; height=50/><span class="counter"> x<span id="Linemate">0</span></span></div>
+                <div class="col-md-2"><img src="src/ressources/normal/emerald.jpg" alt="" width=50; height=50/><span class="counter"> x<span id="Deraumere">0</span></span></div>
+                <div class="col-md-2"><img src="src/ressources/normal/gold.png" alt="" width=50; height=50/><span class="counter"> x<span id="Sibur">0</span></span></div>
+                <div class="col-md-2"><img src="src/ressources/normal/iron.png" alt="" width=50; height=50/><span class="counter"> x<span id="Mendiane">0</span></span></div>
+                <div class="col-md-2"><img src="src/ressources/normal/redstone.jpg" alt="" width=50; height=50/><span class="counter"> x<span id="Phiras">0</span></span></div>
+                <div class="col-md-2"><img src="src/ressources/normal/lapis.png" alt="" width=50; height=50/><span class="counter"> x<span id="Thystame">0</span></span></div>
+                <div class="col-md-2 type">Linemate</div>
+                <div class="col-md-2 type">Deraumere</div>
+                <div class="col-md-2 type">Sibur</div>
+                <div class="col-md-2 type">Mendiane</div>
+                <div class="col-md-2 type">Phiras</div>
+                <div class="col-md-2 type">Thystame</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 bouffe">
+                <img src="src/ressources/normal/melon.png" alt="" width=65; height=65/><span class="counter"> x<span id="Nourriture">0</span></span>
+              </div>
+              <div class="col-md-12 type">
+                <span>nourriture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+<!-- All inclusion files from Js -->
+<script type="text/javascript" src="lib/jQuery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="lib/react/build/react.min.js"></script>
+<script type="text/javascript" src="lib/react/build/react-dom.min.js"></script>
+<script type="text/javascript" src="js/browser.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/toastr-master/toastr.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/three.min.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/FlyControls.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/OrbitControls.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/SkyShader.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/Detector.js"></script>
+<script type="text/javascript" src="lib/threeJs/build/dat.gui.min.js"></script>
+
+<script type="text/javascript" src="lib/socket.io.js"></script>
+<script type="text/javascript" src="lib/require.js"></script>
+
+<script type="text/javascript" src="lib/threex.minecraft/threex.animation.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.animations.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.minecraft.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.minecraftcharbodyanim.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.minecraftcharheadanim.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.minecraftcontrols.js"></script>
+<script type="text/javascript" src="lib/threex.minecraft/threex.minecraftplayer.js"></script>
+<script type="text/javascript" src="js/socket.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/babel" src="js/gui.js"></script>
+
+<!-- /All inclusion files from Js -->
+</html>
